@@ -1,23 +1,103 @@
-.App {
+:root {
+  --primary-color: #ff3333;
+  --secondary-color: #333333;
+  --background-color: #f5f5f5;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--secondary-color);
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.navbar {
+  background-color: var(--secondary-color);
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 2rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+.content {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+footer {
+  background-color: var(--secondary-color);
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+h1, h2 {
+  color: var(--primary-color);
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #ff6666;
+}
+
+.home-page {
+  background-image: url('C:/Users/Alex/Git/projects/mobile-detailing/mobile-detailing-frontend/public/test.JPG');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
   text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.home-page h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
-h1 {
-  font-size: 4rem;
-  margin: 0;
-}
-
-p {
+.home-page p {
   font-size: 1.5rem;
+  margin-bottom: 2rem;
 }

@@ -1,28 +1,23 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import About from './pages/About';
+import Services from './pages/Services';
+import Gallery from './pages/Gallery';
+import Contact from './pages/Contact';
 import './App.css';
 
 function App() {
-  const [message, setMessage] = useState('');
-
-  useEffect(() => {
-    axios.get('http://localhost:5000/')
-      .then(response => {
-        setMessage(response.data.hello);
-      })
-      .catch(error => {
-        console.error('There was an error fetching the data!', error);
-      });
-  }, []);
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Welcome to Mobile Detailing</h1>
-        <p>Your car deserves the best care.</p>
-        <p>{message}</p>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </Router>
   );
 }
 
